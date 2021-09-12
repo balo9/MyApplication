@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,13 +16,12 @@ public static final String EXTRA_MESSAGE = "com.example.firstapp.MESSAGE";
     }
 
     public void sendMessage (View view) {
-        Intent intent = new Intent (packageContent this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
+        Intent intent = new Intent (this, DisplayMessageActivity.class);
+        EditText editText = (EditText) findViewById(R.id.editTextTextPersonName);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
 
-    private void startActivity(Intent intent) {
-    }
+
 }
